@@ -1,0 +1,83 @@
+== README
+
+Which train?
+Web app that shows which train to take when going from my home to Martin Place
+
+Based on the current time, display
+* What time to leave our apartment by
+* Which train station to walk to (Arncliffe or Wolli Creek)
+* What time the train leaves
+* What time the train arrives at Martin Place
+See index.html for a basic sample output
+
+Future improvements
+* Show info for the next 3-5 trains
+* Retrieve train timetable from Sydney Trains
+* Reload the data every x minutes
+* Add Turrella(sp?) train station?
+* Add ability to enter location, nearby train stations, walking time, & destination
+* Detect location automatically
+* Add ability to enter departure time
+
+Add to README
+* Ruby version
+* System dependencies
+* Configuration
+* Database creation
+* Database initialization
+* How to run the test suite
+* Services (job queues, cache servers, search engines, etc.)
+* Deployment instructions
+* ...
+
+--------------------------------------------------
+Data
+
+station
+  name
+  minsFromHome
+  timetable
+
+timetable
+  tripNumber
+  trainDepartureTime
+  trainArrivalTime
+
+trip
+  houseDepartureTime
+  station
+  tripNumber
+
+possibleTrips - Array trips
+
+currentTime
+
+--------------------------------------------------
+Logic
+
+foreach station
+  foreach item in timetable
+    new trip
+    trip.houseDepartureTime = trainTrip[trainDepartureTime] - station.minsFromHome
+    possibleTrips.add(trip)
+
+forach possibleTrip
+  if currentTime < possibleTrip.houseDepartureTime
+    display info from possibleTrip and next 2 trips
+
+..................................................
+
+foreach station
+  earliestTrainDeparture = currentTime + station.minsFromHome
+  foreach trainTrip in timetable
+    if earliestTrainDeparture <= trainTrip[trainDepartureTime]
+      trip = new Trip(trainTrip[departureTime] + station.minsFromHome, station, tripNumber)
+      possibleTrips.add(trip)
+      for next 2 trainTrips
+        trip = new Trip(houseDepartureTime, station, tripNumber)
+        possibleTrips.add(trip)
+
+possibleTrips.sort
+
+--------------------------------------------------
+
