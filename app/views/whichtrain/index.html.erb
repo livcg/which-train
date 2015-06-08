@@ -5,9 +5,11 @@
 <table>
   <thead>
     <tr><td>Current time</td><td>11:55 AM</td></tr>
-    <tr><td>Leave house by</td><td><b>12:00 PM</b></td></tr>
-    <tr><td>Go to train station</td><td><b>Wolli Creek</b></td></tr>
-    <tr><td>Train departs</td><td>12:15 PM</td></tr>
+    <tr><td>Leave house by</td><td><b><%= @tripoption.leaveHouseBy %></b></td></tr>
+    <tr><td>Go to train station</td><td><b><%= @tripoption.station.name %></b></td></tr> 
+    <tr><td>Train departs</td><td><%= @tripoption.trainLeavesAt %></td></tr>
+    <% if false %>
+    <% end %>
   </thead>
 </table>
 

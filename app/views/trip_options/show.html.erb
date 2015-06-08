@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Leavehouseby:</strong>
+  <%= @trip_option.leaveHouseBy %>
+</p>
+
+<p>
+  <strong>Trainleavesat:</strong>
+  <%= @trip_option.trainLeavesAt %>
+</p>
+
+<p>
+  <strong>Station:</strong>
+  <%= @trip_option.station %>
+</p>
+
+<%= link_to 'Edit', edit_trip_option_path(@trip_option) %> |
+<%= link_to 'Back', trip_options_path %>
