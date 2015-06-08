@@ -10,6 +10,11 @@ Based on the current time, display
 * What time the train arrives at Martin Place
 See index.html for a basic sample output
 
+To do
+* Add tests
+* Validate data
+* Convert to pg
+
 Future improvements
 * Show info for the next 3-5 trains
 * Retrieve train timetable from Sydney Trains
@@ -36,9 +41,9 @@ Data
 station
   name
   minsFromHome
-  timetable
+  timetable - Array of trainTrips
 
-timetable
+trainTrip
   tripNumber
   trainDepartureTime
   trainArrivalTime

@@ -1,0 +1,3 @@
+class WhichtrainController < ApplicationController
+
+end
