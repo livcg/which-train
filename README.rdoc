@@ -12,6 +12,7 @@ See index.html for a basic sample output
 
 To do
 x. Review next N possible trips for each station instead of just first
+x. Show options side by side
 * Add arrival time
 * Sort traintrips as they're entered
 * Add DB script for test data

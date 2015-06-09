@@ -2,19 +2,43 @@
 
 <h1>Which Train Should I Take?</h1>
 
-<table>
-  <thead>
-    <tr><td>Current time</td><td><%= @now.strftime("%H:%M") %></td></tr>
+<p>Current time: <b><%= @now.strftime("%H:%M") %></b></p>
 
-    <% @tripoptions.each do |tripoption| %>
-      <tr><td>&nbsp;</td></tr>
-      <tr><td><b>Option:</b></td></tr>
-      <tr><td>Leave house by</td><td><b><%= tripoption.leaveHouseBy.strftime("%H:%M") %></b></td></tr>
-      <tr><td>Go to train station</td><td><b><%= tripoption.station.name %></b></td></tr> 
-      <tr><td>Train departs</td><td><%= tripoption.trainLeavesAt.strftime("%H:%M") %></td></tr>
-      <tr><td>Train arrives</td><td>XX:XX</td></tr>
-    <% end %>
-  </thead>
+<table border="1">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <% count = 0 %>
+      <% @tripoptions.each do |tripoption| %>
+        <td>Option <%= count += 1 %></td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <td>Leave house by</td>
+      <% @tripoptions.each do |tripoption| %>
+        <td><b><%= tripoption.leaveHouseBy.strftime("%H:%M") %></b></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Go to train station</td>
+      <% @tripoptions.each do |tripoption| %>
+        <td><b><%= tripoption.station.name %></b></td>
+      <% end %>
+    </tr> 
+    <tr>
+      <td>Train departs</td>
+        <% @tripoptions.each do |tripoption| %>
+      <td><%= tripoption.trainLeavesAt.strftime("%H:%M") %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Train arrives at Martin Place</td>
+        <% @tripoptions.each do |tripoption| %>
+      <td>XX:XX</td>
+      <% end %>
+    </tr>
+  </tbody>
 </table>
 
 <br>
