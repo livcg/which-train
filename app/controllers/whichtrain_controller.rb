@@ -3,23 +3,26 @@ class WhichtrainController < ApplicationController
   # GET /
   def index
     @now = Time.new
-    @tripoption = getNextTripOption(@now)
+    @tripoptions = getNextTripOptions(@now)
   end
 
   private
-  def getNextTripOption(time)
-    tripoption = TripOption.new
+  def getNextTripOptions(time)
+    tripOptions = []
     Station.all.each do |station|
       arriveAtStation = time + (station.minsFromHome * 60)
       station.traintrips.sort { |x,y| x.trainleavesat <=> y.trainleavesat }
         .each do |traintrip|
         if arriveAtStation.strftime("%H%M") < traintrip.trainleavesat.strftime("%H%M")
-          tripoption.leaveHouseBy = traintrip.trainleavesat - (station.minsFromHome * 60)
-          tripoption.station = station
-          tripoption.trainLeavesAt  = traintrip.trainleavesat
+          tripOption = TripOption.new
+          tripOption.leaveHouseBy = traintrip.trainleavesat - (station.minsFromHome * 60)
+          tripOption.station = station
+          tripOption.trainLeavesAt  = traintrip.trainleavesat
+          tripOptions.push(tripOption)
+          break;
         end
       end
     end
-    return tripoption
+    return tripOptions.sort { |x,y| x.leaveHouseBy <=> y.leaveHouseBy }
   end
 end
