@@ -1,16 +1,18 @@
 class WhichtrainController < ApplicationController
-
+  MAX_NUM_OPTIONS_FOR_STATION = 2
+  
   # GET /
   def index
     @now = Time.new
     @tripoptions = getNextTripOptions(@now)
   end
-
+  
   private
   def getNextTripOptions(time)
     tripOptions = []
     Station.all.each do |station|
       arriveAtStation = time + (station.minsFromHome * 60)
+      optionsForThisStation = 0
       station.traintrips.sort { |x,y| x.trainleavesat <=> y.trainleavesat }
         .each do |traintrip|
         if arriveAtStation.strftime("%H%M") < traintrip.trainleavesat.strftime("%H%M")
@@ -19,7 +21,9 @@ class WhichtrainController < ApplicationController
           tripOption.station = station
           tripOption.trainLeavesAt  = traintrip.trainleavesat
           tripOptions.push(tripOption)
-          break;
+          if (optionsForThisStation += 1) == MAX_NUM_OPTIONS_FOR_STATION
+            break;
+          end
         end
       end
     end
