@@ -13,12 +13,17 @@ See index.html for a basic sample output
 To do
 x. Review next N possible trips for each station instead of just first
 x. Show options side by side
+x. Upload to Github
+x. Convert to pg
+x. Add DB script for test data
+* Deploy to Heroku
 * Add arrival time
+* Incorporate bootstrap
+* Handle condition when there are no stations
+* Handle condition when there are no train trip options
 * Sort traintrips as they're entered
-* Add DB script for test data
 * Add tests
-* Validate data
-* Convert to pg
+* Validate input
 
 Future improvements
 * Show info for the next 3-5 trains

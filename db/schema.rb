@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150608064122) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "stations", force: :cascade do |t|
     t.string   "name"
     t.integer  "minsFromHome"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150608064122) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "traintrips", ["station_id"], name: "index_traintrips_on_station_id"
+  add_index "traintrips", ["station_id"], name: "index_traintrips_on_station_id", using: :btree
 
   create_table "trip_options", force: :cascade do |t|
     t.time     "leaveHouseBy"
@@ -37,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150608064122) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "trip_options", ["station_id"], name: "index_trip_options_on_station_id"
+  add_index "trip_options", ["station_id"], name: "index_trip_options_on_station_id", using: :btree
 
+  add_foreign_key "traintrips", "stations"
+  add_foreign_key "trip_options", "stations"
 end
