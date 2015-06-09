@@ -2,7 +2,12 @@
 
 <h1>Which Train Should I Take?</h1>
 
-<p>Current time: <b><%= @now.strftime("%H:%M") %></b></p>
+<p>
+Current time: <b><%= @now.strftime("%H:%M") %></b>
+<% if @isPastLastTrain %>
+  <br>Showing train times for tomorrow
+<% end %>
+</p>
 
 <table border="1">
   <tbody>

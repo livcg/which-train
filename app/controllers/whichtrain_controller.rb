@@ -3,8 +3,14 @@ class WhichtrainController < ApplicationController
   
   # GET /
   def index
-    @now = Time.new
-    @tripoptions = getNextTripOptions(@now)
+    Time.zone = "Sydney"
+    @now = Time.zone.now
+    timeToUse = @now
+    if @now > @now.change(hour: 10, mins: 32)
+      timeToUse = @now.change(hour: 7)
+      @isPastLastTrain = true
+    end
+    @tripoptions = getNextTripOptions(timeToUse)
   end
   
   private
