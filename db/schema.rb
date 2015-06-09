@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608034403) do
+ActiveRecord::Schema.define(version: 20150608064122) do
 
   create_table "stations", force: :cascade do |t|
     t.string   "name"
@@ -20,19 +20,8 @@ ActiveRecord::Schema.define(version: 20150608034403) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "train_trips", force: :cascade do |t|
-    t.time     "departureTime"
-    t.time     "arrivalTime"
-    t.integer  "station_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "train_trips", ["station_id"], name: "index_train_trips_on_station_id"
-
   create_table "traintrips", force: :cascade do |t|
-    t.time     "departuretime"
-    t.time     "arrivaltime"
+    t.time     "trainleavesat"
     t.integer  "station_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

@@ -10,5 +10,21 @@
   <%= @station.minsFromHome %>
 </p>
 
+<h2>Train trips</h2>
+<% @station.traintrips.sort.each do |traintrip| %>
+  <%= traintrip.trainleavesat.strftime("%H:%M") %><br/>
+<% end %>
+
+<h2>Add a train departure time</h2>
+<%= form_for([@station, @station.traintrips.build]) do |f| %>
+  <p>
+    <%= f.label :trainleavesat %><br>
+    <%= f.text_field :trainleavesat %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_station_path(@station) %> |
 <%= link_to 'Back', stations_path %>

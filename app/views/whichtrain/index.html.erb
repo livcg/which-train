@@ -4,10 +4,10 @@
 
 <table>
   <thead>
-    <tr><td>Current time</td><td>11:55 AM</td></tr>
-    <tr><td>Leave house by</td><td><b><%= @tripoption.leaveHouseBy %></b></td></tr>
+    <tr><td>Current time</td><td><%= @now.strftime("%H:%M") %></td></tr>
+    <tr><td>Leave house by</td><td><b><%= @tripoption.leaveHouseBy.strftime("%H:%M") %></b></td></tr>
     <tr><td>Go to train station</td><td><b><%= @tripoption.station.name %></b></td></tr> 
-    <tr><td>Train departs</td><td><%= @tripoption.trainLeavesAt %></td></tr>
+    <tr><td>Train departs</td><td><%= @tripoption.trainLeavesAt.strftime("%H:%M") %></td></tr>
     <% if false %>
     <% end %>
   </thead>
@@ -15,3 +15,4 @@
 
 <br>
 
+<%= link_to 'Stations', stations_path %>

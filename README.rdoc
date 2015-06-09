@@ -11,6 +11,7 @@ Based on the current time, display
 See index.html for a basic sample output
 
 To do
+* Sort traintrips as they're entered
 * Add tests
 * Validate data
 * Convert to pg
