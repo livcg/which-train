@@ -3,8 +3,8 @@
 <h1>Which Train Should I Take?</h1>
 
 <p>
-Local time: <b><%= @now.strftime("%H:%M") %></b> (at Arncliffe, NSW, Australia)<br>
-Note: No train times past ~10:30AM<% if @isPastLastTrain %>; showing options for tomorrow<% end %>
+Local time: <b><%= @now.strftime("%-I:%M %p") %></b> (at Arncliffe, NSW, Australia)<br>
+Note: No train times past ~10:30 AM<% if @isPastLastTrain %>; showing options for tomorrow after ~8:20 AM<% end %>
 </p>
 
 <div class="tripoptions">
@@ -22,7 +22,7 @@ Note: No train times past ~10:30AM<% if @isPastLastTrain %>; showing options for
     <tr>
       <td>Leave house by</td>
       <% @tripoptions.each do |tripoption| %>
-        <td><b><%= tripoption.leaveHouseBy.strftime("%H:%M") %></b></td>
+        <td><b><%= tripoption.leaveHouseBy.strftime("%-I:%M %p") %></b></td>
       <% end %>
     </tr>
     <tr>
@@ -34,7 +34,7 @@ Note: No train times past ~10:30AM<% if @isPastLastTrain %>; showing options for
     <tr>
       <td>Train departs on</td>
         <% @tripoptions.each do |tripoption| %>
-      <td><%= tripoption.trainLeavesAt.strftime("%H:%M") %></td>
+      <td><%= tripoption.trainLeavesAt.strftime("%-I:%M %p") %></td>
       <% end %>
     </tr>
     <tr>

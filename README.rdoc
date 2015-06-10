@@ -17,8 +17,13 @@ x. Upload to Github
 x. Convert to pg
 x. Add DB script for test data
 x. Deploy to Heroku
+x. Incorporate bootstrap
 * Add tests!
-* Improve UI! - Add "AM/PM", add station info to root page, incorporate bootstrap, etc.
+* Improve UI!
+  x. Add "AM/PM"
+  * Style station pages
+  * Add station info to root page
+  * Etc.
 * Improve check for when to start showing train options for tomorrow
   * Explain cut off time in index.html; not showing options past XX:XX
 * Add note re: earliest train time  
@@ -31,7 +36,14 @@ x. Deploy to Heroku
 Future improvements
 x. Show info for the next 3-5 trains
 * Add ability to enter departure time
-* Retrieve train timetable from Sydney Trains - https://tdx.transportnsw.info/
+* Retrieve train timetable from Sydney Trains
+  https://tdx.transportnsw.info/terms-conditions.php
+  https://tdx.transportnsw.info/download/
+    General Transit Feed Specification (GTFS)
+    ALL Greater Sydney transport operators static timetable data
+    https://tdx.transportnsw.info/download/files/Full_Greater_Sydney_GTFS_release_notes_V_3_2_140618.pdf 9pgs
+  https://developers.google.com/transit
+* Get real-time train data
 * Reload the data every x minutes
 * Add ability to enter location, nearby train stations, walking time, & destination
 * Detect location automatically
