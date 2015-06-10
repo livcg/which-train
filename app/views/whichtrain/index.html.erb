@@ -3,22 +3,22 @@
 <h1>Which Train Should I Take?</h1>
 
 <p>
-Current time: <b><%= @now.strftime("%H:%M") %></b>
-<% if @isPastLastTrain %>
-  <br>Showing train times for tomorrow
-<% end %>
+Local time: <b><%= @now.strftime("%H:%M") %></b> (at Arncliffe, NSW, Australia)<br>
+Note: No train times past ~10:30AM<% if @isPastLastTrain %>; showing options for tomorrow<% end %>
 </p>
 
-<table border="1">
-  <tbody>
+<div class="tripoptions">
+<table class="table table-bordered">
+  <thead>
     <tr>
-      <td>&nbsp;</td>
+      <th>&nbsp;</th>
       <% count = 0 %>
       <% @tripoptions.each do |tripoption| %>
-        <td>Option <%= count += 1 %></td>
+        <th>Option <%= count += 1 %></th>
       <% end %>
     </tr>
-
+  </thead>
+  <tbody>
     <tr>
       <td>Leave house by</td>
       <% @tripoptions.each do |tripoption| %>
@@ -32,21 +32,29 @@ Current time: <b><%= @now.strftime("%H:%M") %></b>
       <% end %>
     </tr> 
     <tr>
-      <td>Train departs</td>
+      <td>Train departs on</td>
         <% @tripoptions.each do |tripoption| %>
       <td><%= tripoption.trainLeavesAt.strftime("%H:%M") %></td>
       <% end %>
     </tr>
     <tr>
-      <td>Train arrives at Martin Place</td>
+      <td>Train arrives at Martin Place on</td>
         <% @tripoptions.each do |tripoption| %>
       <td>XX:XX</td>
       <% end %>
     </tr>
   </tbody>
 </table>
+<div>
+  
+<p><button type="button" class="btn btn-info"><%= link_to 'Stations', stations_path %></button></p>
 
-<br>
+<br><br>
 
-<%= link_to 'Stations', stations_path %>
+<hr>
 
+<p>
+  <button type="button" class="btn btn-sm btn-default">
+    <a href="https://dl.dropboxusercontent.com/u/1611870/e-commute-schedule.xls">Alpha version</a></button>
+  <button type="button" class="btn btn-sm btn-default"><a href="https://github.com/livcg/which-train" target="_blank">Source</a></button>
+</p>

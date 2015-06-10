@@ -18,7 +18,6 @@ traintrip = Traintrip.create([{ station_id: 1, trainleavesat: "8:23" },
                               { station_id: 1, trainleavesat: "9:33" },
                               { station_id: 1, trainleavesat: "9:43" },
                               { station_id: 1, trainleavesat: "10:03" },
-                              { station_id: 1, trainleavesat: "10:03" },
                               { station_id: 1, trainleavesat: "10:33" }])
                                
 traintrip = Traintrip.create([{ station_id: 2, trainleavesat: "8:26" },

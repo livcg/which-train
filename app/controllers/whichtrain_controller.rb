@@ -6,7 +6,7 @@ class WhichtrainController < ApplicationController
     Time.zone = "Sydney"
     @now = Time.zone.now
     timeToUse = @now
-    if @now > @now.change(hour: 10, mins: 32)
+    if @now > @now.change(hour: 10, min: 32)
       timeToUse = @now.change(hour: 7)
       @isPastLastTrain = true
     end

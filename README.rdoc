@@ -16,23 +16,26 @@ x. Show options side by side
 x. Upload to Github
 x. Convert to pg
 x. Add DB script for test data
-* Deploy to Heroku
-* Add arrival time
-* Incorporate bootstrap
+x. Deploy to Heroku
+* Add tests!
+* Improve UI! - Add "AM/PM", add station info to root page, incorporate bootstrap, etc.
+* Improve check for when to start showing train options for tomorrow
+  * Explain cut off time in index.html; not showing options past XX:XX
+* Add note re: earliest train time  
+* Add tripLength to Station
 * Handle condition when there are no stations
 * Handle condition when there are no train trip options
 * Sort traintrips as they're entered
-* Add tests
 * Validate input
 
 Future improvements
-* Show info for the next 3-5 trains
-* Retrieve train timetable from Sydney Trains
+x. Show info for the next 3-5 trains
+* Add ability to enter departure time
+* Retrieve train timetable from Sydney Trains - https://tdx.transportnsw.info/
 * Reload the data every x minutes
-* Add Turrella(sp?) train station?
 * Add ability to enter location, nearby train stations, walking time, & destination
 * Detect location automatically
-* Add ability to enter departure time
+* Add Turrella(sp?) train station?
 
 Add to README
 * Ruby version
