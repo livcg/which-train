@@ -8,7 +8,7 @@ class Station < ActiveRecord::Base
 
   def Station.get_next_trip_options(leave_house_at)
     trip_options = []
-    Station.all.each do |station|
+    all.each do |station|
       trip_options.concat(station.get_next_trip_options(leave_house_at))
     end
     return trip_options.sort { |x,y| x.leave_house_by <=> y.leave_house_by }
@@ -21,7 +21,8 @@ class Station < ActiveRecord::Base
     traintrips.sort { |x,y| x.train_leaves_at <=> y.train_leaves_at }
       .each do |train_trip|
       if train_trip.leaves_after(arrive_at_station)
-        trip_option = TripOption.new(leave_house_by: train_trip.train_leaves_at - (mins_from_home * 60), station: self, train_leaves_at: train_trip.train_leaves_at)
+        trip_option = TripOption.new(leave_house_by: train_trip.train_leaves_at - (mins_from_home * 60), 
+          station: self, train_leaves_at: train_trip.train_leaves_at)
         trip_options.push(trip_option)
         if (options_for_this_station += 1) == MAX_NUM_OPTIONS_PER_STATION
           break;

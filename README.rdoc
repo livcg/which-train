@@ -19,12 +19,14 @@ x. Add DB script for test data
 x. Deploy to Heroku
 x. Incorporate bootstrap
 x. Refactor stuff out of WhichtrainController
-* Change method & var names from camelcase to snake case
-    x. stations.minsFromHome
-    traintrips
-    x. traintrips.trainleavesat
-    x. trip_options.leave_house_by
-    x. trip_options.train_leaves_at
+x. Change method & var names from CamelCase to snake case
+    x. stations.minsFromHome => stations.mins_from_home
+    x. trip_options.leaveHouseBy => trip_options.leave_house_by
+    x. trip_options.trainleavesAt => trip_options.train_leaves_at 
+    x. traintrips.trainleavesat => traintrips.train_leaves_at
+* Change class names to CamelCase
+    Traintrips => TrainTrips    
+    Whichtrain => WhichTrain
 * Add tests!
 * Improve UI!
   x. Add "AM/PM"
