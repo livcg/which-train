@@ -22,7 +22,7 @@ x. Incorporate bootstrap
 * Improve UI!
   x. Add "AM/PM"
   * Style station pages
-  * Add station info to root page
+    * Add station info to root page
   * Etc.
 * Improve check for when to start showing train options for tomorrow
   * Explain cut off time in index.html; not showing options past XX:XX

@@ -21,7 +21,7 @@ class WhichtrainController < ApplicationController
       optionsForThisStation = 0
       station.traintrips.sort { |x,y| x.trainleavesat <=> y.trainleavesat }
         .each do |traintrip|
-        if arriveAtStation.strftime("%H%M") < traintrip.trainleavesat.strftime("%H%M")
+        if arriveAtStation.strftime("%H%M") <= traintrip.trainleavesat.strftime("%H%M")
           tripOption = TripOption.new
           tripOption.leaveHouseBy = traintrip.trainleavesat - (station.minsFromHome * 60)
           tripOption.station = station
