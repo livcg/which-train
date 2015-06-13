@@ -69,6 +69,6 @@ class TripOptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_option_params
-      params.require(:trip_option).permit(:leaveHouseBy, :trainLeavesAt, :station_id)
+      params.require(:trip_option).permit(:leave_house_by, :train_leaves_at, :station_id)
     end
 end

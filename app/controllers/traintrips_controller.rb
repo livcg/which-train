@@ -7,6 +7,6 @@ class TraintripsController < ApplicationController
  
   private
   def traintrip_params
-    params.require(:traintrip).permit(:trainleavesat)
+    params.require(:traintrip).permit(:train_leaves_at)
   end
 end

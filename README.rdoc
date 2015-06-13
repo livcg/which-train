@@ -22,9 +22,9 @@ x. Refactor stuff out of WhichtrainController
 * Change method & var names from camelcase to snake case
     x. stations.minsFromHome
     traintrips
-    traintrips.trainleavesat
-    trip_options.leaveHouseBy
-    trip_options.trainLeavesAt
+    traintrips.train_leaves_at
+    trip_options.leave_house_by
+    trip_options.train_leaves_at
 * Add tests!
 * Improve UI!
   x. Add "AM/PM"

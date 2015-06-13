@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  leaveHouseBy: 2015-06-08 13:44:03
-  trainLeavesAt: 2015-06-08 13:44:03
+  leave_house_by: 2015-06-08 13:44:03
+  train_leaves_at: 2015-06-08 13:44:03
   station_id: 
 
 two:
-  leaveHouseBy: 2015-06-08 13:44:03
-  trainLeavesAt: 2015-06-08 13:44:03
+  leave_house_by: 2015-06-08 13:44:03
+  train_leaves_at: 2015-06-08 13:44:03
   station_id: 

@@ -12,14 +12,14 @@
 
 <h2>Train trips</h2>
 <% @station.traintrips.sort.each do |traintrip| %>
-  <%= traintrip.trainleavesat.strftime("%H:%M") %><br/>
+  <%= traintrip.train_leaves_at.strftime("%H:%M") %><br/>
 <% end %>
 
 <h2>Add a train departure time</h2>
 <%= form_for([@station, @station.traintrips.build]) do |f| %>
   <p>
-    <%= f.label :trainleavesat %><br>
-    <%= f.text_field :trainleavesat %>
+    <%= f.label :train_leaves_at %><br>
+    <%= f.text_field :train_leaves_at %>
   </p>
   <p>
     <%= f.submit %>

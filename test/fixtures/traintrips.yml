@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  trainleavesat: 2015-06-08 16:41:22
+  train_leaves_at: 2015-06-08 16:41:22
   station_id: 
 
 two:
-  trainleavesat: 2015-06-08 16:41:22
+  train_leaves_at: 2015-06-08 16:41:22
   station_id: 

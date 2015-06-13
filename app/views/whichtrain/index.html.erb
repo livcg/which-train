@@ -22,7 +22,7 @@ Note: No train times past ~10:30 AM<% if @is_past_last_train %>; showing options
     <tr>
       <td>Leave house by</td>
       <% @trip_options.each do |trip_option| %>
-        <td><b><%= trip_option.leaveHouseBy.strftime("%-I:%M %p") %></b></td>
+        <td><b><%= trip_option.leave_house_by.strftime("%-I:%M %p") %></b></td>
       <% end %>
     </tr>
     <tr>
@@ -34,7 +34,7 @@ Note: No train times past ~10:30 AM<% if @is_past_last_train %>; showing options
     <tr>
       <td>Train departs on</td>
         <% @trip_options.each do |trip_option| %>
-      <td><%= trip_option.trainLeavesAt.strftime("%-I:%M %p") %></td>
+      <td><%= trip_option.train_leaves_at.strftime("%-I:%M %p") %></td>
       <% end %>
     </tr>
     <tr>

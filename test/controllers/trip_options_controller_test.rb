@@ -18,7 +18,7 @@ class TripOptionsControllerTest < ActionController::TestCase
 
   test "should create trip_option" do
     assert_difference('TripOption.count') do
-      post :create, trip_option: { leaveHouseBy: @trip_option.leaveHouseBy, station_id: @trip_option.station_id, trainLeavesAt: @trip_option.trainLeavesAt }
+      post :create, trip_option: { leave_house_by: @trip_option.leave_house_by, station_id: @trip_option.station_id, train_leaves_at: @trip_option.train_leaves_at }
     end
 
     assert_redirected_to trip_option_path(assigns(:trip_option))
@@ -35,7 +35,7 @@ class TripOptionsControllerTest < ActionController::TestCase
   end
 
   test "should update trip_option" do
-    patch :update, id: @trip_option, trip_option: { leaveHouseBy: @trip_option.leaveHouseBy, station_id: @trip_option.station_id, trainLeavesAt: @trip_option.trainLeavesAt }
+    patch :update, id: @trip_option, trip_option: { leave_house_by: @trip_option.leave_house_by, station_id: @trip_option.station_id, train_leaves_at: @trip_option.train_leaves_at }
     assert_redirected_to trip_option_path(assigns(:trip_option))
   end
 

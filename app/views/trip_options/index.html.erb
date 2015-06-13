@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Leavehouseby</th>
-      <th>Trainleavesat</th>
+      <th>leave_house_by</th>
+      <th>train_leaves_at</th>
       <th>Station</th>
       <th colspan="3"></th>
     </tr>
@@ -15,8 +15,8 @@
   <tbody>
     <% @trip_options.each do |trip_option| %>
       <tr>
-        <td><%= trip_option.leaveHouseBy %></td>
-        <td><%= trip_option.trainLeavesAt %></td>
+        <td><%= trip_option.leave_house_by %></td>
+        <td><%= trip_option.train_leaves_at %></td>
         <td><%= trip_option.station %></td>
         <td><%= link_to 'Show', trip_option %></td>
         <td><%= link_to 'Edit', edit_trip_option_path(trip_option) %></td>
