@@ -18,6 +18,8 @@ x. Convert to pg
 x. Add DB script for test data
 x. Deploy to Heroku
 x. Incorporate bootstrap
+x. Refactor stuff out of WhichtrainController
+* Change method & var names from camelcase to snake case
 * Add tests!
 * Improve UI!
   x. Add "AM/PM"
