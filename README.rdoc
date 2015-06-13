@@ -20,6 +20,11 @@ x. Deploy to Heroku
 x. Incorporate bootstrap
 x. Refactor stuff out of WhichtrainController
 * Change method & var names from camelcase to snake case
+    x. stations.minsFromHome
+    traintrips
+    traintrips.trainleavesat
+    trip_options.leaveHouseBy
+    trip_options.trainLeavesAt
 * Add tests!
 * Improve UI!
   x. Add "AM/PM"
@@ -67,7 +72,7 @@ Data
 
 station
   name
-  minsFromHome
+  mins_from_home
   timetable - Array of trainTrips
 
 trainTrip
@@ -90,7 +95,7 @@ Logic
 foreach station
   foreach item in timetable
     new trip
-    trip.houseDepartureTime = trainTrip[trainDepartureTime] - station.minsFromHome
+    trip.houseDepartureTime = trainTrip[trainDepartureTime] - station.mins_from_home
     possibleTrips.add(trip)
 
 forach possibleTrip
@@ -100,10 +105,10 @@ forach possibleTrip
 ..................................................
 
 foreach station
-  earliestTrainDeparture = currentTime + station.minsFromHome
+  earliestTrainDeparture = currentTime + station.mins_from_home
   foreach trainTrip in timetable
     if earliestTrainDeparture <= trainTrip[trainDepartureTime]
-      trip = new Trip(trainTrip[departureTime] + station.minsFromHome, station, tripNumber)
+      trip = new Trip(trainTrip[departureTime] + station.mins_from_home, station, tripNumber)
       possibleTrips.add(trip)
       for next 2 trainTrips
         trip = new Trip(houseDepartureTime, station, tripNumber)

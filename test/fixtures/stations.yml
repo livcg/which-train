@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  minsFromHome: 1
+  mins_from_home: 1
 
 two:
   name: MyString
-  minsFromHome: 1
+  mins_from_home: 1

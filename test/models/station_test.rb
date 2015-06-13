@@ -6,13 +6,13 @@ class StationTest < ActiveSupport::TestCase
     assert !station.save, "Saved the station without a name"
   end
 
-  test "should not save station without minsFromHome" do
+  test "should not save station without mins_from_home" do
     station = Station.new(name: "foo")
-    assert !station.save, "Saved the station without a minsFromHome"
+    assert !station.save, "Saved the station without a mins_from_home"
   end  
 
-  # test "should not save station with minsFromHome < 0" do
-  #   station = Station.new({ name: "foo", minsFromHome: -1 })
-  #   assert !station.save, "Saved the station with minsFromHome < 0"
+  # test "should not save station with mins_from_home < 0" do
+  #   station = Station.new({ name: "foo", mins_from_home: -1 })
+  #   assert !station.save, "Saved the station with mins_from_home < 0"
   # end  
 end

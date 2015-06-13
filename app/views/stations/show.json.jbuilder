@@ -1,1 +1,1 @@
-json.extract! @station, :id, :name, :minsFromHome, :created_at, :updated_at
+json.extract! @station, :id, :name, :mins_from_home, :created_at, :updated_at

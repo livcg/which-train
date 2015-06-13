@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-station = Station.create([{ name: 'Arncliffe', minsFromHome: 10 }, { name: 'Wolli Creek', minsFromHome: 15 }])
+station = Station.create([{ name: 'Arncliffe', mins_from_home: 10 }, { name: 'Wolli Creek', mins_from_home: 15 }])
 
 traintrip = Traintrip.create([{ station_id: 1, trainleavesat: "8:23" },
                               { station_id: 1, trainleavesat: "8:33" },
