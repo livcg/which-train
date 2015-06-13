@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class StationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
   test "should not save station without name" do
     station = Station.new
     assert !station.save, "Saved the station without a name"

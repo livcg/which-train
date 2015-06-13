@@ -4,7 +4,7 @@
 
 <p>
 Local time: <b><%= @now.strftime("%-I:%M %p") %></b> (at Arncliffe, NSW, Australia)<br>
-Note: No train times past ~10:30 AM<% if @isPastLastTrain %>; showing options for tomorrow after ~8:20 AM<% end %>
+Note: No train times past ~10:30 AM<% if @is_past_last_train %>; showing options for tomorrow after ~8:20 AM<% end %>
 </p>
 
 <div class="tripoptions">
@@ -13,7 +13,7 @@ Note: No train times past ~10:30 AM<% if @isPastLastTrain %>; showing options fo
     <tr>
       <th>&nbsp;</th>
       <% count = 0 %>
-      <% @tripoptions.each do |tripoption| %>
+      <% @trip_options.each do |trip_option| %>
         <th>Option <%= count += 1 %></th>
       <% end %>
     </tr>
@@ -21,25 +21,25 @@ Note: No train times past ~10:30 AM<% if @isPastLastTrain %>; showing options fo
   <tbody>
     <tr>
       <td>Leave house by</td>
-      <% @tripoptions.each do |tripoption| %>
-        <td><b><%= tripoption.leaveHouseBy.strftime("%-I:%M %p") %></b></td>
+      <% @trip_options.each do |trip_option| %>
+        <td><b><%= trip_option.leaveHouseBy.strftime("%-I:%M %p") %></b></td>
       <% end %>
     </tr>
     <tr>
       <td>Go to train station</td>
-      <% @tripoptions.each do |tripoption| %>
-        <td><b><%= tripoption.station.name %></b></td>
+      <% @trip_options.each do |trip_option| %>
+        <td><b><%= trip_option.station.name %></b></td>
       <% end %>
     </tr> 
     <tr>
       <td>Train departs on</td>
-        <% @tripoptions.each do |tripoption| %>
-      <td><%= tripoption.trainLeavesAt.strftime("%-I:%M %p") %></td>
+        <% @trip_options.each do |trip_option| %>
+      <td><%= trip_option.trainLeavesAt.strftime("%-I:%M %p") %></td>
       <% end %>
     </tr>
     <tr>
       <td>Train arrives at<br>Martin Place on</td>
-        <% @tripoptions.each do |tripoption| %>
+        <% @trip_options.each do |trip_option| %>
       <td>XX:XX</td>
       <% end %>
     </tr>

@@ -1,7 +1,7 @@
 class TraintripsController < ApplicationController
   def create
     @station = Station.find(params[:station_id])
-    @traintrip = @station.traintrips.create(traintrip_params)
+    @station.traintrips.create(traintrip_params)
     redirect_to station_path(@station)
   end
  

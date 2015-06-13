@@ -10,7 +10,6 @@ class StationsController < ApplicationController
   # GET /stations/1
   # GET /stations/1.json
   def show
-    @traintrips = Traintrip
   end
 
   # GET /stations/new
