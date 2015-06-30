@@ -4,7 +4,7 @@
 
 <p>
 Local time: <b><%= @now.strftime("%-I:%M %p") %></b> (at Arncliffe, NSW, Australia)<br>
-Note: No train times past ~10:30 AM<% if @is_past_last_train %>; showing options for tomorrow after ~8:20 AM<% end %>
+Note: No train time info past ~12:59 PM<% if @is_past_last_train %>; showing options for tomorrow after ~8:00 AM<% end %>
 </p>
 
 <div class="tripoptions">
