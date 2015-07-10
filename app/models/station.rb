@@ -4,7 +4,7 @@ class Station < ActiveRecord::Base
 
   has_many :traintrips
 
-  MAX_NUM_OPTIONS_PER_STATION = 3
+  MIN_MINS_TO_GET_OPTIONS_FOR = 90
 
   def Station.get_next_trip_options(leave_house_at)
     trip_options = []
@@ -24,7 +24,7 @@ class Station < ActiveRecord::Base
         trip_option = TripOption.new(leave_house_by: train_trip.train_leaves_at - (mins_from_home * 60), 
           station: self, train_leaves_at: train_trip.train_leaves_at)
         trip_options.push(trip_option)
-        if (options_for_this_station += 1) == MAX_NUM_OPTIONS_PER_STATION
+        if train_trip.leaves_after(leave_house_at + MIN_MINS_TO_GET_OPTIONS_FOR * 60)
           break;
         end
       end
